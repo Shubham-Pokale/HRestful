@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}{{ department.name }}{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>{{ department.name }} ({{ department.code }})</h1>
+    <div>
+        <a href="{% url 'core:department-update' department.pk %}" class="btn btn-primary me-2">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <a href="{% url 'core:department-list' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Department Information</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Established Date</dt>
+                    <dd class="col-sm-8">{{ department.established_date }}</dd>
+
+                    <dt class="col-sm-4">Budget</dt>
+                    <dd class="col-sm-8">${{ department.budget|floatformat:2 }}</dd>
+
+                    <dt class="col-sm-4">Employee Count</dt>
+                    <dd class="col-sm-8">{{ department.employees.count }}</dd>
+
+                    <dt class="col-sm-4">Description</dt>
+                    <dd class="col-sm-8">{{ department.description|linebreaks }}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Employees</h5>
+                <a href="{% url 'core:employee-create' %}?department={{ department.pk }}" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus"></i> Add Employee
+                </a>
+            </div>
+            <div class="card-body">
+                {% if department.employees.all %}
+                <div class="list-group">
+                    {% for employee in department.employees.all %}
+                    <a href="{% url 'core:employee-detail' employee.pk %}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ employee.full_name }}</h6>
+                            <small>{{ employee.get_job_level_display }}</small>
+                        </div>
+                        <small class="text-muted">Joined: {{ employee.date_joined }}</small>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted">No employees in this department yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

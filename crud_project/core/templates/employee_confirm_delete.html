@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Employee{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h3 class="card-title">Confirm Deletion</h3>
+    </div>
+    <div class="card-body">
+        <p>Are you sure you want to delete the employee <strong>{{ object.full_name }}</strong>?</p>
+        
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i> 
+            This action cannot be undone. All information about this employee will be permanently removed.
+        </div>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-flex justify-content-end">
+                <a href="{% url 'core:employee-detail' object.pk %}" class="btn btn-outline-secondary me-2">
+                    Cancel
+                </a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Confirm Delete
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
