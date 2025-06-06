@@ -181,3 +181,54 @@ a {
         height: 20rem;
     }
 }
+
+/* Auth Pages Styling */
+.auth-card {
+    max-width: 450px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.auth-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+}
+
+.auth-body {
+    padding: 2rem;
+}
+
+.auth-footer {
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+
+/* Form Input Styling */
+.auth-form .input-group-text {
+    background-color: #f8f9fa;
+    border-right: none;
+}
+
+.auth-form .form-control {
+    border-left: none;
+}
+
+.auth-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+/* Button Styling */
+.btn-auth {
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Add to your main CSS file */
+.min-vh-100 { min-height: 100vh; }
+.max-w-md { max-width: 28rem; }
+.rounded-2xl { border-radius: 1rem; }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
