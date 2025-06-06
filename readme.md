@@ -48,11 +48,12 @@ Prerequisites
 
 Installation
 
-Clone the repository
+- Clone the repository
 
-bash
-git clone https://github.com/Shubham-Pokale/HRestful.git
-cd HRestful
+
+   - ``git clone https://github.com/Shubham-Pokale/HRestful.git``
+
+   - ``cd HRestful``
 
 - Set up virtual environment
 
@@ -131,6 +132,13 @@ We welcome contributions! Please follow these steps:
 
 Distributed under the MIT License. See LICENSE for more information.
 
-**Contact*
+**Contact**
 
 Shubham Pokale - shubham.pokale@appzlogic.com
+
+Project link : https://hrestful.onrender.com/
+
+## Login Credentials :
+ 
+ - Username : admin
+ - Password : Qwerty@2001
