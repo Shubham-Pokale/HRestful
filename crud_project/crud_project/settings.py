@@ -162,8 +162,9 @@ if DEBUG:
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 
-LOGOUT_REDIRECT_URL = 'home'  # Redirect to home after logout
+LOGOUT_REDIRECT_URL = 'core:home'  # Redirect to home after logout
 LOGIN_URL = 'login'   
+LOGIN_REDIRECT_URL = 'core:home'  # Redirect to home after successful login
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
