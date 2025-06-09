@@ -111,7 +111,9 @@
                     <div class="card border-left-info h-100">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title">{{ department.name }}</h5>
+                                <h5 class="card-title text-truncate" style="max-width: 200px;" title="{{ department.name }}">
+                                    {{ department.name }}
+                                </h5>
                                 <span class="badge bg-primary">{{ department.employees.count }} employees</span>
                             </div>
                             <p class="card-text text-muted small">{{ department.description|truncatechars:100 }}</p>
